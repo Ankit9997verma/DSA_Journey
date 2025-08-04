@@ -1,0 +1,30 @@
+class Solution {
+    public int totalNumbers(int[] digits) {  
+        
+       HashSet<Integer> set=new HashSet<>();
+       int n=digits.length;
+       
+       for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++ ){
+            for(int k=0;k<n;k++){
+                if(i!=j && j!=k && i!=k) {
+               int digit1=digits[i];
+               int digit2=digits[j];
+               int digit3=digits[k];
+               if(digit1 ==0) continue; 
+               if(digit3 %2!=0) continue; 
+              
+               int result=digit1 *100+digit2*10+digit3; 
+               set.add(result);
+                
+            }
+            }
+      
+       //with ankit and daksh Thank you !!!! (',')
+        }
+       } 
+       
+       return set.size();  
+      
+    }
+}
